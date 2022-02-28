@@ -1,7 +1,7 @@
 # lncRNA_signature_for_NPC
 
 ## Overview
-This R markdown file contains R scripts that reproduce the main results of the paper. The required data format and expected output can be found in the corresponding html file. 
+This R markdown file contains R codes that reproduce the main results of the paper. The required data format and expected outputs can be found in the corresponding html file. 
  
 ## System requirements
 The codes require only a standard computer with enough RAM to support the in-memory operations.
