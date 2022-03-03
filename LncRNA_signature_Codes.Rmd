@@ -180,17 +180,6 @@ plot(lnc_N_ROC,col="black",lwd=2,add=T)
 plot(lncsig_ROC,col="red",lwd=2,add=T)
 ```
 
-Patients characteristics in the training cohort (Table 1)
-```{r,message = FALSE,warning = FALSE}
-DataAll <- data_train
-factorvars=c("AgeGroup","Sex","Tstage","Nstage","EBVDNAGroup","Metastasis","Progression","Death")
-DataAll[factorvars]<-lapply(DataAll[factorvars],factor)
-vars=c("AgeGroup","Sex","Tstage","Nstage","EBVDNAGroup","Metastasis","Progression","Death")
-table1<-CreateTableOne(vars = vars,strata="lncRNA_signature",data=DataAll)
-Res<-print(table1,showAllLevels = TRUE,
-           cramVars = c("AgeGroup","Sex","Tstage","Nstage","EBVDNAGroup","Metastasis","Progression","Death"))
-```
-
 ## Internal Validation
 - ValidationData contains the expression of the 9 selected lncRNAs by qRT-PCR and clinical information of each patients in the internal validation cohort.
 ```{r,message = FALSE,warning = FALSE}
@@ -277,18 +266,6 @@ plot(lnc_N_ROC_iv,col="black",lwd=2,add=T)
 plot(lncsig_ROC_iv,col="red",lwd=2,add=T)
 ```
 
-Patients characteristics in the internal validation cohort (Table 1)
-```{r,message = FALSE,warning = FALSE}
-DataAll_vd <- data_invd
-factorvars=c("AgeGroup","Sex","Tstage","Nstage","EBVDNAGroup","Metastasis","Progression","Death")
-DataAll_vd[factorvars]<-lapply(DataAll_vd[factorvars],factor)
-vars=c("AgeGroup","Sex","Tstage","Nstage","EBVDNAGroup","Metastasis","Progression","Death")
-table_vd<-CreateTableOne(vars = vars,strata="lncRNA_signature",data=DataAll_vd)
-Res<-print(table_vd,showAllLevels = TRUE,
-           cramVars = c("AgeGroup","Sex","Tstage","Nstage","EBVDNAGroup","Metastasis","Progression","Death"))
-```
-
-
 ## External validation
 - Guilindata contains the expression of the 9 selected lncRNAs by qRT-PCR and clinical information of each patients in the external validation cohort.
 ```{r,message = FALSE,warning = FALSE}
@@ -370,16 +347,6 @@ plot(lnc_N_ROC_ev,col="black",lwd=2,add=T)
 plot(lncsig_ROC_ev,col="red",lwd=2,add=T)
 ```
 
-Patients characteristics in the external validation cohort (Table 1)
-```{r,message = FALSE,warning = FALSE}
-DataAll_gl <- Guilindata
-factorvars=c("AgeGroup","Sex","Tstage","Nstage","Metastasis","Progression","Death")
-DataAll_gl[factorvars]<-lapply(DataAll_gl[factorvars],factor)
-vars=c("AgeGroup","Sex","Tstage","Nstage","Metastasis","Progression","Death")
-table_gl<-CreateTableOne(vars = vars,strata="lncRNA_signature",data=DataAll_gl)
-Res<-print(table_gl,showAllLevels = TRUE,
-           cramVars = c("AgeGroup","Sex","Tstage","Nstage","Metastasis","Progression","Death"))
-```
 
 forest plot (Fig.3)\
 - forestdata is the summary of univariate Cox analyses.
