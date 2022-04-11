@@ -1,4 +1,4 @@
-# lncRNA_signature_for_NPC
+# A lncRNA signature for NPC
 
 ## Overview
 This R markdown file contains R codes that reproduce the main results of the paper. The required data format and expected outputs can be found in the corresponding html file. 
